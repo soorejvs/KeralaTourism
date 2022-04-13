@@ -14,7 +14,7 @@ body {
 .form-signin {
   width: 100%;
   max-width: 330px;
-  padding: 15px;
+  padding: 10px;
   margin: auto;
 }
 
@@ -36,4 +36,12 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.ErrorMessage {
+  text-align: left;
+
+  
+}
+.DisplayError{
+  display: block !important;
 }

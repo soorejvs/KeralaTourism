@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/bootstrap.min.css"  >
     <link rel="stylesheet" href="../bootstrap-5.1.3-dist/css/navbar-top-fixed.css">
     <script src="../js/jquery-3.6.0.min.js"></script> 
+    <script src="../js/Signin.js"></script> 
     <script src="../bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script> 
     <!--<link rel="stylesheet" href="../css/Style.css">-->
     <link href="../css/signin.css" rel="stylesheet">
@@ -21,9 +22,6 @@
         <a class="navbar-brand" href="../Index.html">Kerala Tourism</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
             <li class="nav-item active">
               <a class="nav-link" href="../Index.html">Home <span class="sr-only"></span></a>
             </li>
@@ -34,22 +32,27 @@
               <a class="nav-link" href="../Pages/Signin.html">Login</a>
             </li>
             <li class="nav-item">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
               <a class="nav-link" href="../Pages/Signup.html">Sign Up</a>
             </li>
           </ul>
         </div> 
       </nav>    
       
-    <form class="form-signin" >
+    <form name="Signin" class="form-signin" action="../Pages/Signup.html" novalidate>
         <img class="mb-4" src="../images/KeralaLogo.png" alt="" width="72" height="72" style="margin-top: 50px;">
         <h1 class="h3 mb-3 fw-normal">Please Sign in</h1>
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+            <input type="email" class="form-control" id="EmailName" placeholder="name@example.com">
+            <label for="EmailName">Email Address</label>
+            <p id="error" class="ErrorMessage"></p>
         </div>
         <div class="form-floating">
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Password</label>
+            <p id="pwderror" class="ErrorMessage"></p>
         </div>
 
         <div class="checkbox mb-3">
@@ -57,7 +60,9 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="ValidateEmail(this);ValidatePassword(this)">Sign in</button>
+       <!--<button class="w-100 btn btn-lg btn-primary" type="submit" onclick="ValidateEmail(document.getElementById('EmailName').value)" onclick="ValidatePhoneNo(document.getElementById('floatingPassword').value)">Sign in</button>-->
+       <!--<button class="w-100 btn btn-lg btn-primary" type="submit" onclick="ValidatePhoneNo(document.getElementById('floatingPassword').value)">Sign in</button> -->
         <p class="mt-5 mb-3 text-muted"></p>
     </form>
 </div>
